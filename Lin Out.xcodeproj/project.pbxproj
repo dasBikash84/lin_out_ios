@@ -13,6 +13,7 @@
 		0748D8672488E3A700B73DA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0748D8652488E3A700B73DA1 /* Main.storyboard */; };
 		0748D8692488E3B100B73DA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0748D8682488E3B100B73DA1 /* Assets.xcassets */; };
 		0748D86C2488E3B100B73DA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0748D86A2488E3B100B73DA1 /* LaunchScreen.storyboard */; };
+		CD7E1FCA6CE0D38265C7BB92 /* Pods_Lin_Out.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D75AC6B9ADB91918A21E3C4 /* Pods_Lin_Out.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		0748D8682488E3B100B73DA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0748D86B2488E3B100B73DA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0748D86D2488E3B100B73DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D75AC6B9ADB91918A21E3C4 /* Pods_Lin_Out.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lin_Out.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52260F7C0F5D22B2EC338646 /* Pods-Lin Out.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lin Out.debug.xcconfig"; path = "Target Support Files/Pods-Lin Out/Pods-Lin Out.debug.xcconfig"; sourceTree = "<group>"; };
+		65D224444DCDA1CB3F5B1A38 /* Pods-Lin Out.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lin Out.release.xcconfig"; path = "Target Support Files/Pods-Lin Out/Pods-Lin Out.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD7E1FCA6CE0D38265C7BB92 /* Pods_Lin_Out.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				0748D85E2488E3A700B73DA1 /* Lin Out */,
 				0748D85D2488E3A700B73DA1 /* Products */,
+				B49300125FE833C86DC08B09 /* Pods */,
+				4BA5744ED007C9012D1525BE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,24 @@
 			path = "Lin Out";
 			sourceTree = "<group>";
 		};
+		4BA5744ED007C9012D1525BE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1D75AC6B9ADB91918A21E3C4 /* Pods_Lin_Out.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B49300125FE833C86DC08B09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				52260F7C0F5D22B2EC338646 /* Pods-Lin Out.debug.xcconfig */,
+				65D224444DCDA1CB3F5B1A38 /* Pods-Lin Out.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0748D8702488E3B100B73DA1 /* Build configuration list for PBXNativeTarget "Lin Out" */;
 			buildPhases = (
+				835E5C7E5CE878560026C40E /* [CP] Check Pods Manifest.lock */,
 				0748D8582488E3A700B73DA1 /* Sources */,
 				0748D8592488E3A700B73DA1 /* Frameworks */,
 				0748D85A2488E3A700B73DA1 /* Resources */,
+				175A9E5CA3D9F96E8EDD3586 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		175A9E5CA3D9F96E8EDD3586 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lin Out/Pods-Lin Out-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lin Out/Pods-Lin Out-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lin Out/Pods-Lin Out-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		835E5C7E5CE878560026C40E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lin Out-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0748D8582488E3A700B73DA1 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		0748D8712488E3B100B73DA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52260F7C0F5D22B2EC338646 /* Pods-Lin Out.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +370,7 @@
 		};
 		0748D8722488E3B100B73DA1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65D224444DCDA1CB3F5B1A38 /* Pods-Lin Out.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

@@ -1,0 +1,16 @@
+PODS:
+  - DCToastView (0.1.0)
+
+DEPENDENCIES:
+  - DCToastView
+
+SPEC REPOS:
+  trunk:
+    - DCToastView
+
+SPEC CHECKSUMS:
+  DCToastView: 786aea0a3548c90ec83cf700a89ebcf1f7bba1a4
+
+PODFILE CHECKSUM: 81a66ac94c21ac705205ae68878754fabbb60a3b
+
+COCOAPODS: 1.9.2
