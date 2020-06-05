@@ -16,6 +16,7 @@ struct ConstantDefs{
         static let LOGIN_TO_SIGN_IN = "loginToSignIn"
         static let SIGN_IN_TO_SIGN_OUT = "signInToSignOut"
         static let SIGN_IN_TO_LAUNCHER = "signInToLauncher"
+        static let SIGN_OUT_TO_LAUNCHER = "signOutToLauncher"
     }
     
     struct ErrorMessages {

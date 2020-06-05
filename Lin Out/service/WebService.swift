@@ -18,6 +18,7 @@ struct WebService {
     private let testEndPoint = "test/"
     private let loginPath = "user/login"
     private let sessionOpenPath = "work-session/open-session"
+    private let sessionClosePath = "work-session/close-session"
     
     private func getTestApiPath() -> String{
         return "\(baseApiAddress)\(testEndPoint)"
@@ -29,6 +30,10 @@ struct WebService {
     
     private func getSessionOpenPath() -> String {
         return "\(baseApiAddress)\(sessionOpenPath)"
+    }
+    
+    private func getSessionClosePath() -> String {
+        return "\(baseApiAddress)\(sessionClosePath)"
     }
     
     func testApi() {
@@ -104,10 +109,7 @@ struct WebService {
                                 (data : Data?, response : URLResponse?, error : Error?) in
                                 print("Callback called")
                 if(response?.isSuccess() ?? false){
-//                    if let responseData = data {
-                        print(String(data:data!,encoding: .utf8) ?? "No data")
-//                        print(SessionOpenRequestResponse.fromJsonData(data: responseData))
-//                    }
+                    print(String(data:data!,encoding: .utf8) ?? "No data")
                     doOnSuccess(SessionOpenRequestResponse.fromJsonData(data: data!)!.created)
                 }else{
                     doOnFailure()
@@ -115,6 +117,36 @@ struct WebService {
             }
             task.resume()
             print("openSession Task fired")
+        }
+    }
+    
+    func closeSession(with sessionCloseRequest:SessionCloseRequest,
+                  onSuccess doOnSuccess: @escaping  ()->Void,
+                  onFailure doOnFailure: @escaping  ()->Void){
+        
+        if let url = URL(string: getSessionClosePath()){
+            print(url)
+            
+            let session = URLSession(configuration: .default)
+            var request = URLRequest(url: url)
+            
+            request.setPostMethod()
+            request.setBasicAuthorizationHeader()
+            request.addJsonContentHeader()
+            request.httpBody = sessionCloseRequest.jsonData
+            
+            let task = session.dataTask(with: request) {
+                                (data : Data?, response : URLResponse?, error : Error?) in
+                                print("Callback called")
+                if(response?.isSuccess() ?? false){
+                    print(String(data:data!,encoding: .utf8) ?? "No data")
+                    doOnSuccess()
+                }else{
+                    doOnFailure()
+                }
+            }
+            task.resume()
+            print("closeSession Task fired")
         }
     }
     

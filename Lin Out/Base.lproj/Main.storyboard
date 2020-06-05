@@ -33,37 +33,12 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToLogin" modalPresentationStyle="fullScreen" id="fGr-cN-jj9"/>
                         <segue destination="j0Y-O6-SaD" kind="presentation" identifier="goToSignIn" modalPresentationStyle="fullScreen" id="h6M-lF-Wdi"/>
-                        <segue destination="mGi-ld-XvL" kind="presentation" identifier="goToSignOut" modalPresentationStyle="fullScreen" id="ioE-cx-LmD"/>
+                        <segue destination="bTN-Pv-gQw" kind="presentation" identifier="goToSignOut" modalPresentationStyle="fullScreen" id="C4h-ni-swv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5P-DP-KaL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1677" y="94"/>
-        </scene>
-        <!--Sign Out View Controller-->
-        <scene sceneID="42K-uL-aLa">
-            <objects>
-                <viewController id="mGi-ld-XvL" customClass="SignOutViewController" customModule="Lin_Out" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZtW-6C-RM3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign out Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Kq-M3-33Y">
-                                <rect key="frame" x="186" y="438" width="122" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="Qko-DG-lJz"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="aMK-cl-bHz"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="El9-qd-Wd3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-530" y="552"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -273,20 +248,134 @@
                         <outlet property="tfCustomerId" destination="uTF-yP-txz" id="HAF-mY-FGz"/>
                         <outlet property="tvAddress" destination="Adu-lO-p1T" id="bdN-xm-5JE"/>
                         <outlet property="tvUserName" destination="E6p-CA-C6u" id="JsJ-3X-m3b"/>
-                        <segue destination="mGi-ld-XvL" kind="presentation" identifier="signInToSignOut" modalPresentationStyle="fullScreen" id="h7K-EE-rGY"/>
                         <segue destination="mgr-sb-fjA" kind="presentation" identifier="signInToLauncher" modalPresentationStyle="fullScreen" id="U4h-tZ-wyX"/>
+                        <segue destination="bTN-Pv-gQw" kind="presentation" identifier="signInToSignOut" modalPresentationStyle="fullScreen" id="Jjc-WI-Q07"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K07-mI-r0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579.71014492753625" y="93.75"/>
+            <point key="canvasLocation" x="690" y="94"/>
+        </scene>
+        <!--Sign Out View Controller-->
+        <scene sceneID="tnq-Wy-xFt">
+            <objects>
+                <viewController id="bTN-Pv-gQw" customClass="SignOutViewController" customModule="Lin_Out" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hgt-Tb-vwN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vdA-FS-7JO">
+                                <rect key="frame" x="20" y="64" width="374" height="160"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T03-te-D6e">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="tIE-Bu-emc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFj-yN-tQN">
+                                        <rect key="frame" x="0.0" y="42" width="374" height="32"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="vsv-CS-3IM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZDa-68-GYr">
+                                        <rect key="frame" x="0.0" y="84" width="374" height="32"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="Fxa-Ft-b6G"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Closing comments" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P1k-ij-4W4">
+                                        <rect key="frame" x="0.0" y="126" width="374" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="Bda-TW-sba"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="OFj-yN-tQN" firstAttribute="leading" secondItem="vdA-FS-7JO" secondAttribute="leading" id="JZw-xG-nZM"/>
+                                    <constraint firstItem="ZDa-68-GYr" firstAttribute="leading" secondItem="vdA-FS-7JO" secondAttribute="leading" id="ONe-iv-eh5"/>
+                                    <constraint firstItem="T03-te-D6e" firstAttribute="top" secondItem="vdA-FS-7JO" secondAttribute="top" id="PUo-c2-91I"/>
+                                    <constraint firstAttribute="trailing" secondItem="P1k-ij-4W4" secondAttribute="trailing" id="Q4e-0A-Lpe"/>
+                                    <constraint firstAttribute="trailing" secondItem="T03-te-D6e" secondAttribute="trailing" id="Rrz-eJ-SPS"/>
+                                    <constraint firstItem="T03-te-D6e" firstAttribute="leading" secondItem="vdA-FS-7JO" secondAttribute="leading" id="WaM-OQ-9cf"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZDa-68-GYr" secondAttribute="trailing" id="hRH-io-ncF"/>
+                                    <constraint firstItem="P1k-ij-4W4" firstAttribute="leading" secondItem="vdA-FS-7JO" secondAttribute="leading" id="qa9-Ud-HlV"/>
+                                    <constraint firstAttribute="trailing" secondItem="OFj-yN-tQN" secondAttribute="trailing" id="xg4-Hp-zrv"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cl8-5a-6bL" customClass="RoundButton" customModule="Lin_Out" customModuleProvider="target">
+                                <rect key="frame" x="107" y="264" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ahL-Ch-dYN"/>
+                                    <constraint firstAttribute="height" constant="200" id="udc-j2-CH8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NotoNastaliqUrdu-Bold" family="Noto Nastaliq Urdu" pointSize="29"/>
+                                <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadious">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signOutPressed:" destination="bTN-Pv-gQw" eventType="touchUpInside" id="TSa-21-3Zy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cl8-5a-6bL" firstAttribute="centerX" secondItem="hgt-Tb-vwN" secondAttribute="centerX" id="8a5-HQ-aBd"/>
+                            <constraint firstItem="cl8-5a-6bL" firstAttribute="top" secondItem="vdA-FS-7JO" secondAttribute="bottom" constant="40" id="byw-Vj-IiL"/>
+                            <constraint firstItem="AEY-kg-qcw" firstAttribute="trailing" secondItem="vdA-FS-7JO" secondAttribute="trailing" constant="20" id="hq4-h4-iYe"/>
+                            <constraint firstItem="vdA-FS-7JO" firstAttribute="top" secondItem="AEY-kg-qcw" secondAttribute="top" constant="20" id="oUN-b6-4Iv"/>
+                            <constraint firstItem="vdA-FS-7JO" firstAttribute="leading" secondItem="hgt-Tb-vwN" secondAttribute="leading" constant="20" id="wTK-61-Iis"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AEY-kg-qcw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="a6b-JT-xzJ"/>
+                    <connections>
+                        <outlet property="tfClosingComments" destination="P1k-ij-4W4" id="f71-xm-zEe"/>
+                        <outlet property="tvAddress" destination="OFj-yN-tQN" id="Sqj-D6-0I1"/>
+                        <outlet property="tvSignInDuration" destination="ZDa-68-GYr" id="HCQ-eL-zyL"/>
+                        <outlet property="tvUserName" destination="T03-te-D6e" id="OvP-Qk-zLj"/>
+                        <segue destination="mgr-sb-fjA" kind="presentation" identifier="signOutToLauncher" modalPresentationStyle="fullScreen" id="UTg-Ef-MtT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCv-IM-7o0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-530" y="907"/>
         </scene>
     </scenes>
     <resources>
         <image name="appLogo" width="170.5" height="170.5"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="C4h-ni-swv"/>
         <segue reference="h6M-lF-Wdi"/>
-        <segue reference="h7K-EE-rGY"/>
+        <segue reference="UTg-Ef-MtT"/>
     </inferredMetricsTieBreakers>
 </document>
