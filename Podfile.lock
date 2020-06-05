@@ -1,16 +1,20 @@
 PODS:
   - DCToastView (0.1.0)
+  - IQKeyboardManager (6.5.5)
 
 DEPENDENCIES:
   - DCToastView
+  - IQKeyboardManager
 
 SPEC REPOS:
   trunk:
     - DCToastView
+    - IQKeyboardManager
 
 SPEC CHECKSUMS:
   DCToastView: 786aea0a3548c90ec83cf700a89ebcf1f7bba1a4
+  IQKeyboardManager: 3a8b9e603f8b0eeaf5f096a1f2b2cfcf121992ef
 
-PODFILE CHECKSUM: 81a66ac94c21ac705205ae68878754fabbb60a3b
+PODFILE CHECKSUM: 6fd65c8226e70da959e81da4576d5541e865a79a
 
 COCOAPODS: 1.9.2

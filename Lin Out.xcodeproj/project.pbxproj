@@ -15,6 +15,12 @@
 		0748D86C2488E3B100B73DA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0748D86A2488E3B100B73DA1 /* LaunchScreen.storyboard */; };
 		07EBADA32489BDC5005597ED /* ViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EBADA22489BDC5005597ED /* ViewControllerExtensions.swift */; };
 		07EBADA52489C219005597ED /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EBADA42489C219005597ED /* WebService.swift */; };
+		07EBADA72489E1AE005597ED /* LauncherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EBADA62489E1AE005597ED /* LauncherViewController.swift */; };
+		07EBADAA2489E4EA005597ED /* ConstantDefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EBADA92489E4EA005597ED /* ConstantDefs.swift */; };
+		07EBADAC2489E6E0005597ED /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EBADAB2489E6E0005597ED /* SignInViewController.swift */; };
+		07EBADAE2489E813005597ED /* SignOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EBADAD2489E813005597ED /* SignOutViewController.swift */; };
+		07EBADB02489EAA6005597ED /* LocalPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EBADAF2489EAA6005597ED /* LocalPersistenceService.swift */; };
+		07EBADB3248A08F8005597ED /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07EBADB2248A08F8005597ED /* RoundButton.swift */; };
 		CD7E1FCA6CE0D38265C7BB92 /* Pods_Lin_Out.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D75AC6B9ADB91918A21E3C4 /* Pods_Lin_Out.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +35,12 @@
 		0748D86D2488E3B100B73DA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07EBADA22489BDC5005597ED /* ViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtensions.swift; sourceTree = "<group>"; };
 		07EBADA42489C219005597ED /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
+		07EBADA62489E1AE005597ED /* LauncherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherViewController.swift; sourceTree = "<group>"; };
+		07EBADA92489E4EA005597ED /* ConstantDefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstantDefs.swift; sourceTree = "<group>"; };
+		07EBADAB2489E6E0005597ED /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		07EBADAD2489E813005597ED /* SignOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignOutViewController.swift; sourceTree = "<group>"; };
+		07EBADAF2489EAA6005597ED /* LocalPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersistenceService.swift; sourceTree = "<group>"; };
+		07EBADB2248A08F8005597ED /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		1D75AC6B9ADB91918A21E3C4 /* Pods_Lin_Out.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lin_Out.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52260F7C0F5D22B2EC338646 /* Pods-Lin Out.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lin Out.debug.xcconfig"; path = "Target Support Files/Pods-Lin Out/Pods-Lin Out.debug.xcconfig"; sourceTree = "<group>"; };
 		65D224444DCDA1CB3F5B1A38 /* Pods-Lin Out.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lin Out.release.xcconfig"; path = "Target Support Files/Pods-Lin Out/Pods-Lin Out.release.xcconfig"; sourceTree = "<group>"; };
@@ -67,6 +79,8 @@
 		0748D85E2488E3A700B73DA1 /* Lin Out */ = {
 			isa = PBXGroup;
 			children = (
+				07EBADB1248A08CC005597ED /* views */,
+				07EBADA82489E322005597ED /* defs */,
 				07EBADA12489BD92005597ED /* extensions */,
 				07EBADA02489BD82005597ED /* service */,
 				0748D85F2488E3A700B73DA1 /* AppDelegate.swift */,
@@ -84,6 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				0748D8632488E3A700B73DA1 /* LoginViewController.swift */,
+				07EBADA62489E1AE005597ED /* LauncherViewController.swift */,
+				07EBADAB2489E6E0005597ED /* SignInViewController.swift */,
+				07EBADAD2489E813005597ED /* SignOutViewController.swift */,
 			);
 			path = view_controllers;
 			sourceTree = "<group>";
@@ -92,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				07EBADA42489C219005597ED /* WebService.swift */,
+				07EBADAF2489EAA6005597ED /* LocalPersistenceService.swift */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -102,6 +120,22 @@
 				07EBADA22489BDC5005597ED /* ViewControllerExtensions.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		07EBADA82489E322005597ED /* defs */ = {
+			isa = PBXGroup;
+			children = (
+				07EBADA92489E4EA005597ED /* ConstantDefs.swift */,
+			);
+			path = defs;
+			sourceTree = "<group>";
+		};
+		07EBADB1248A08CC005597ED /* views */ = {
+			isa = PBXGroup;
+			children = (
+				07EBADB2248A08F8005597ED /* RoundButton.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		4BA5744ED007C9012D1525BE /* Frameworks */ = {
@@ -236,11 +270,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07EBADAA2489E4EA005597ED /* ConstantDefs.swift in Sources */,
 				07EBADA32489BDC5005597ED /* ViewControllerExtensions.swift in Sources */,
 				0748D8642488E3A700B73DA1 /* LoginViewController.swift in Sources */,
 				0748D8602488E3A700B73DA1 /* AppDelegate.swift in Sources */,
+				07EBADB3248A08F8005597ED /* RoundButton.swift in Sources */,
+				07EBADAE2489E813005597ED /* SignOutViewController.swift in Sources */,
+				07EBADAC2489E6E0005597ED /* SignInViewController.swift in Sources */,
 				07EBADA52489C219005597ED /* WebService.swift in Sources */,
+				07EBADA72489E1AE005597ED /* LauncherViewController.swift in Sources */,
 				0748D8622488E3A700B73DA1 /* SceneDelegate.swift in Sources */,
+				07EBADB02489EAA6005597ED /* LocalPersistenceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

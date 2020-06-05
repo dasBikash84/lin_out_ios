@@ -7,5 +7,6 @@ target 'Lin Out' do
 
   # Pods for Lin Out
   pod 'DCToastView'
+  pod 'IQKeyboardManager'
 
 end
