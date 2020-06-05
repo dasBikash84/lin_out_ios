@@ -39,7 +39,7 @@ class LauncherViewController: UIViewController {
     }
     
     private func checkSignIn()->Bool{
-        return false
+        return LocalPersistenceService.INSTANCE.checkSignIn()
     }
     
     private func goToNextScreen(){

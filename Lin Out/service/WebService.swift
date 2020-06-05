@@ -17,6 +17,7 @@ struct WebService {
     private let baseApiAddress = "http://localhost:8555/"
     private let testEndPoint = "test/"
     private let loginPath = "user/login"
+    private let sessionOpenPath = "work-session/open-session"
     
     private func getTestApiPath() -> String{
         return "\(baseApiAddress)\(testEndPoint)"
@@ -24,6 +25,10 @@ struct WebService {
     
     private func getLoginPath() -> String{
         return "\(baseApiAddress)\(loginPath)"
+    }
+    
+    private func getSessionOpenPath() -> String {
+        return "\(baseApiAddress)\(sessionOpenPath)"
     }
     
     func testApi() {
@@ -60,8 +65,8 @@ struct WebService {
             let session = URLSession(configuration: .default)
             
             var request = URLRequest(url: url)
-            request.httpMethod = "GET"
-            request.setAuthorizationHeader(username: userName, password: password)
+            request.setGetMethod()
+            request.setBasicAuthorizationHeader(username: userName, password: password)
             
             let task = session.dataTask(with: request) {
                                 (data : Data?, response : URLResponse?, error : Error?) in
@@ -76,25 +81,51 @@ struct WebService {
                 }
             }
             task.resume()
-            print("Task fired")
+            print("login Task fired")
+        }
+    }
+    
+    func openSession(with sessionOpenRequest:SessionOpenRequest,
+                  onSuccess doOnSuccess: @escaping  (Date)->Void,
+                  onFailure doOnFailure: @escaping  ()->Void){
+        
+        if let url = URL(string: getSessionOpenPath()){
+            print(url)
+            
+            let session = URLSession(configuration: .default)
+            var request = URLRequest(url: url)
+            
+            request.setPostMethod()
+            request.setBasicAuthorizationHeader()
+            request.addJsonContentHeader()
+            request.httpBody = sessionOpenRequest.jsonData
+            
+            let task = session.dataTask(with: request) {
+                                (data : Data?, response : URLResponse?, error : Error?) in
+                                print("Callback called")
+                if(response?.isSuccess() ?? false){
+//                    if let responseData = data {
+                        print(String(data:data!,encoding: .utf8) ?? "No data")
+//                        print(SessionOpenRequestResponse.fromJsonData(data: responseData))
+//                    }
+                    doOnSuccess(SessionOpenRequestResponse.fromJsonData(data: data!)!.created)
+                }else{
+                    doOnFailure()
+                }
+            }
+            task.resume()
+            print("openSession Task fired")
         }
     }
     
 }
 
-extension URLResponse{
-    func getStatusCode() -> Int{
-        return (self as! HTTPURLResponse).statusCode
-    }
-    
-    func isSuccess() -> Bool {
-        return getStatusCode() == 200
-    }
-}
-
 extension URLRequest {
-    mutating func setAuthorizationHeader(username: String, password: String) {
-        guard let data = "\(username):\(password)".data(using: String.Encoding.utf8) else { return }
-        self.setValue("Basic \(data.base64EncodedString())", forHTTPHeaderField: "Authorization")
+    
+    mutating func setBasicAuthorizationHeader() {
+        setBasicAuthorizationHeader(
+            username: LocalPersistenceService.INSTANCE.getLoggedInUserName()!,
+            password: LocalPersistenceService.INSTANCE.getLoggedInUserPassword()!
+        )
     }
 }

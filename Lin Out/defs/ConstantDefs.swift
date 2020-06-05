@@ -14,5 +14,10 @@ struct ConstantDefs{
         static let Launcer_TO_SIGN_IN = "goToSignIn"
         static let Launcer_TO_SIGN_OUT = "goToSignOut"
         static let LOGIN_TO_SIGN_IN = "loginToSignIn"
+        static let SIGN_IN_TO_SIGN_OUT = "signInToSignOut"
+    }
+    
+    struct ErrorMessages {
+        static let LOCATION_REQUIRD_MESSAGE = "Location permission is required for app operation!"
     }
 }

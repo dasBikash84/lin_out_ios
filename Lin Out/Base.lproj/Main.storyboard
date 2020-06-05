@@ -170,7 +170,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="23V-FF-ho3">
                                 <rect key="frame" x="20" y="64" width="374" height="118"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6p-CA-C6u">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6p-CA-C6u">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="32"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -180,7 +180,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adu-lO-p1T">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Adu-lO-p1T">
                                         <rect key="frame" x="0.0" y="42" width="374" height="32"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -232,6 +232,9 @@
                                         <real key="value" value="2"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="signInPressed:" destination="j0Y-O6-SaD" eventType="touchUpInside" id="WCd-kf-cV9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CMS-OJ-EuR" customClass="RoundButton" customModule="Lin_Out" customModuleProvider="target">
                                 <rect key="frame" x="20" y="442" width="374" height="40"/>
@@ -247,6 +250,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="logOutPressed:" destination="j0Y-O6-SaD" eventType="touchUpInside" id="keR-wV-bmN"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -263,6 +269,12 @@
                         <viewLayoutGuide key="safeArea" id="vP3-m2-b6i"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Dk-dp-8bm"/>
+                    <connections>
+                        <outlet property="tfCustomerId" destination="uTF-yP-txz" id="HAF-mY-FGz"/>
+                        <outlet property="tvAddress" destination="Adu-lO-p1T" id="bdN-xm-5JE"/>
+                        <outlet property="tvUserName" destination="E6p-CA-C6u" id="JsJ-3X-m3b"/>
+                        <segue destination="mGi-ld-XvL" kind="presentation" identifier="signInToSignOut" modalPresentationStyle="fullScreen" id="h7K-EE-rGY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K07-mI-r0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -274,5 +286,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="h6M-lF-Wdi"/>
+        <segue reference="h7K-EE-rGY"/>
     </inferredMetricsTieBreakers>
 </document>

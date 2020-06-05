@@ -37,4 +37,34 @@ struct LocalPersistenceService {
         print("\(userName):\(password)")
         return true
     }
+    
+    func getLoggedInUserName() -> String? {
+        return userDefaults.object(forKey: KEYS.LOG_IN_USER_NAME) as? String
+    }
+    
+    func getLoggedInUserPassword() -> String? {
+        return userDefaults.object(forKey: KEYS.LOG_IN_USER_PASSWORD) as? String
+    }
+    
+    func saveSignIn(date:Date){
+        userDefaults.set(date, forKey: KEYS.SIGN_IN_TIME)
+    }
+    
+    func checkSignIn()->Bool{
+        return userDefaults.object(forKey: KEYS.SIGN_IN_TIME) != nil
+    }
+    
+    func clearSignIn(){
+        userDefaults.set(nil, forKey: KEYS.SIGN_IN_TIME)
+    }
+    
+    func clearLogin(){
+        clearSignIn()
+        userDefaults.set(nil, forKey: KEYS.LOG_IN_USER_NAME)
+        userDefaults.set(nil, forKey: KEYS.LOG_IN_USER_PASSWORD)
+    }
+    
+    func getSignIntime() -> Date?{
+        return userDefaults.object(forKey: KEYS.SIGN_IN_TIME) as? Date
+    }
 }
