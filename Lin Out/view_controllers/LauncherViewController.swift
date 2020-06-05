@@ -18,20 +18,14 @@ class LauncherViewController: UIViewController {
     }
 
     private func launchLogin() {
-        dismiss(animated: true){
-            self.performSegue(withIdentifier: ConstantDefs.SegueNames.Launcer_TO_LOGIN, sender: self)
-        }
+        self.performSegue(withIdentifier: ConstantDefs.SegueNames.Launcer_TO_LOGIN, sender: self)
     }
     private func launchSignIn() {
-        dismiss(animated: true){
-            self.performSegue(withIdentifier: ConstantDefs.SegueNames.Launcer_TO_SIGN_IN, sender: self)
-        }
+        self.performSegue(withIdentifier: ConstantDefs.SegueNames.Launcer_TO_SIGN_IN, sender: self)
     }
     
     private func launchSignOut() {
-        dismiss(animated: true){
-            self.performSegue(withIdentifier: ConstantDefs.SegueNames.Launcer_TO_SIGN_OUT, sender: self)
-        }
+        self.performSegue(withIdentifier: ConstantDefs.SegueNames.Launcer_TO_SIGN_OUT, sender: self)
     }
     
     private func checkLogin()->Bool{

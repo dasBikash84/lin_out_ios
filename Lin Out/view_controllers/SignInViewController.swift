@@ -78,7 +78,8 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func logOutPressed(_ sender: RoundButton) {
-        
+        LocalPersistenceService.INSTANCE.clearLogin()
+        self.performSegue(withIdentifier: ConstantDefs.SegueNames.SIGN_IN_TO_LAUNCHER, sender: self)
     }
     
     func initDisplay() {

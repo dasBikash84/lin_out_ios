@@ -274,6 +274,7 @@
                         <outlet property="tvAddress" destination="Adu-lO-p1T" id="bdN-xm-5JE"/>
                         <outlet property="tvUserName" destination="E6p-CA-C6u" id="JsJ-3X-m3b"/>
                         <segue destination="mGi-ld-XvL" kind="presentation" identifier="signInToSignOut" modalPresentationStyle="fullScreen" id="h7K-EE-rGY"/>
+                        <segue destination="mgr-sb-fjA" kind="presentation" identifier="signInToLauncher" modalPresentationStyle="fullScreen" id="U4h-tZ-wyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K07-mI-r0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
