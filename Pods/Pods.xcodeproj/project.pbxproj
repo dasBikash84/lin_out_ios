@@ -33,13 +33,13 @@
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3DC2ECE36E8D29DDBBE3EDAB4F23297D /* ToastPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastPresenter.swift; path = DCToastView/Classes/presenter/ToastPresenter.swift; sourceTree = "<group>"; };
 		3F40B75CE9596E64C082198D696C09A4 /* Pods-Lin Out.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lin Out.debug.xcconfig"; sourceTree = "<group>"; };
-		42D556DAC215DA914FC5A35D0C872012 /* Pods_Lin_Out.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Lin_Out.framework; path = "Pods-Lin Out.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42D556DAC215DA914FC5A35D0C872012 /* Pods_Lin_Out.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lin_Out.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44C067C6D19E57454CF2B9D0389DA7A6 /* DCToastView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DCToastView-prefix.pch"; sourceTree = "<group>"; };
 		65A2B4F1C38ABE41F2DA1A1791E086FE /* ToastMessage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ToastMessage.swift; path = DCToastView/Classes/view/ToastMessage.swift; sourceTree = "<group>"; };
 		72298107A3D92D3113EF7FD6D8DDFC09 /* Pods-Lin Out-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Lin Out-frameworks.sh"; sourceTree = "<group>"; };
 		90F09CD3E4FC2854CE2B94CBE9C60908 /* ToastMessage.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = ToastMessage.xib; path = DCToastView/Classes/view/ToastMessage.xib; sourceTree = "<group>"; };
 		96F09F27EAB8D1B4273C120826D390E6 /* Pods-Lin Out-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Lin Out-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A1B642E226E46EF948E62FE675FEEFB3 /* DCToastView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DCToastView.release.xcconfig; sourceTree = "<group>"; };
 		A55AE68E5F2CBB29D453C36AA910D225 /* Pods-Lin Out-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Lin Out-acknowledgements.plist"; sourceTree = "<group>"; };
 		B1894947CAB1D477879DDD2F79C0F704 /* DCToastView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = DCToastView.modulemap; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		BD6C00B99A1318DCCC9C1B61F81374DC /* Pods-Lin Out.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Lin Out.release.xcconfig"; sourceTree = "<group>"; };
 		C853D5891FF50577D07B93A9EBDEB14F /* Pods-Lin Out.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Lin Out.modulemap"; sourceTree = "<group>"; };
 		CA25131218CBA13E6CD4662CF19A9308 /* Pods-Lin Out-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Lin Out-umbrella.h"; sourceTree = "<group>"; };
-		D3ECB5618C06551B8A3D0633DF62EE58 /* DCToastView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DCToastView.framework; path = DCToastView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3ECB5618C06551B8A3D0633DF62EE58 /* DCToastView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DCToastView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4EAF3FF80E4F2CD9D9A0C831B43F235 /* DCToastView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DCToastView.debug.xcconfig; sourceTree = "<group>"; };
 		DF065EDF1FE575C4462708F6798C7D58 /* Pods-Lin Out-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Lin Out-dummy.m"; sourceTree = "<group>"; };
 		E5FBD3AFABEE0BA3466E029C4A6BB008 /* DCToastView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DCToastView-dummy.m"; sourceTree = "<group>"; };
@@ -158,7 +158,6 @@
 				3DC2ECE36E8D29DDBBE3EDAB4F23297D /* ToastPresenter.swift */,
 				6493C0AF4E0CD3A4BFAB1C032DFAD8D1 /* Support Files */,
 			);
-			name = DCToastView;
 			path = DCToastView;
 			sourceTree = "<group>";
 		};
@@ -237,6 +236,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1100;
+				TargetAttributes = {
+					988CB902C1DF7B759DC01CA8A0D62CFE = {
+						LastSwiftMigration = 1130;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -374,7 +378,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -474,7 +478,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
