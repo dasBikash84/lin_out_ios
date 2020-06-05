@@ -22,6 +22,32 @@ class SignInViewController : LocationEnabledViewController {
         
     }
     
+    fileprivate func signInTask(_ cusId: String, _ currentLocation: CLLocation, _ currentAddress: String, _ currentPostCode: String) {
+        WebService.INSTANCE.openSession(with:
+            SessionOpenRequest(
+                customerId: cusId,
+                lat: currentLocation.coordinate.latitude,
+                lan: currentLocation.coordinate.longitude,
+                address: currentAddress,
+                postCode: currentPostCode,
+                macAddress: MacUtils.INSTANCE.getDeviceMac()
+            ),onSuccess: {(date:Date) in
+                self.runOnMainThread{
+                    LocalPersistenceService.INSTANCE.saveSignIn(date: date)
+                    ToastPresenter.shared.show(in: self.view, message: "Session open success", timeOut: 0.5)
+                    self.performSegue(withIdentifier: ConstantDefs.SegueNames.SIGN_IN_TO_SIGN_OUT, sender: self)
+                }
+                print("Session open success")
+        },
+              onFailure: {
+                self.runOnMainThread{
+                    ToastPresenter.shared.show(in: self.view, message: "Session open failed", timeOut: 2.0)
+                }
+                print("Session open failed")
+        }
+        )
+    }
+    
     @IBAction func signInPressed(_ sender: RoundButton) {
         
         guard let currentLocation = location,
@@ -42,34 +68,17 @@ class SignInViewController : LocationEnabledViewController {
         print(currentAddress)
         print(currentPostCode)
         
-        WebService.INSTANCE.openSession(with:
-            SessionOpenRequest(
-                customerId: cusId,
-                lat: currentLocation.coordinate.latitude,
-                lan: currentLocation.coordinate.longitude,
-                address: currentAddress,
-                postCode: currentPostCode,
-                macAddress: MacUtils.INSTANCE.getDeviceMac()
-            ),onSuccess: {(date:Date) in
-                self.runOnMainThread{
-                    LocalPersistenceService.INSTANCE.saveSignIn(date: date)
-                    ToastPresenter.shared.show(in: self.view, message: "Session open success", timeOut: 0.5)
-                    self.performSegue(withIdentifier: ConstantDefs.SegueNames.SIGN_IN_TO_SIGN_OUT, sender: self)
-                }
-                print("Session open success")
-            },
-            onFailure: {
-                self.runOnMainThread{
-                    ToastPresenter.shared.show(in: self.view, message: "Session open failed", timeOut: 2.0)
-                }
-                print("Session open failed")
-            }
-        )
+        showAlertDialog(title: "Sign In?", message: nil, positiveButtonTask: {
+            self.signInTask(cusId, currentLocation, currentAddress, currentPostCode)
+        })
     }
     
     @IBAction func logOutPressed(_ sender: RoundButton) {
-        LocalPersistenceService.INSTANCE.clearLogin()
-        self.performSegue(withIdentifier: ConstantDefs.SegueNames.SIGN_IN_TO_LAUNCHER, sender: self)
+        showAlertDialog(title: "Log out?", message: nil, positiveButtonTask: {
+                LocalPersistenceService.INSTANCE.clearLogin()
+                self.performSegue(withIdentifier: ConstantDefs.SegueNames.SIGN_IN_TO_LAUNCHER, sender: self)
+            }
+        )
     }
     
     override func initDisplay() {

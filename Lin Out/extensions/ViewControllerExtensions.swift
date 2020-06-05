@@ -49,6 +49,29 @@ extension UIViewController{
     }
     
     
+    func showAlertDialog(title:String?,
+                         message:String?,
+                         positiveButtonTask: @escaping ()->Void,
+                         negativeButtonTask: @escaping ()->Void = {},
+                        positiveButtonText:String = "Ok",
+                        negativeButtonText:String = "Cancel"){
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let positiveAction = UIAlertAction(title: positiveButtonText, style: .default) { (action) in
+            positiveButtonTask()
+        }
+        
+        let negativeAction = UIAlertAction(title: negativeButtonText, style: .default) { (action) in
+            negativeButtonTask()
+        }
+        
+        alert.addAction(positiveAction)
+        alert.addAction(negativeAction)
+        present(alert, animated: true) {}
+    }
+    
+    
 }
 
 

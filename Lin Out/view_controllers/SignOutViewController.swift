@@ -8,6 +8,7 @@
 
 import UIKit
 import DCToastView
+import CoreLocation
 
 class SignOutViewController: LocationEnabledViewController {
     
@@ -40,6 +41,32 @@ class SignOutViewController: LocationEnabledViewController {
         tvAddress.text = addressLine
     }
     
+    fileprivate func signOutTask(_ comment: String, _ currentLocation: CLLocation, _ currentAddress: String, _ currentPostCode: String) {
+        WebService.INSTANCE.closeSession(with:
+            SessionCloseRequest(
+                comments: comment,
+                lat: currentLocation.coordinate.latitude,
+                lan: currentLocation.coordinate.longitude,
+                address: currentAddress,
+                postCode: currentPostCode,
+                macAddress: MacUtils.INSTANCE.getDeviceMac()
+            ),onSuccess: {
+                self.runOnMainThread{
+                    LocalPersistenceService.INSTANCE.clearSignIn()
+                    ToastPresenter.shared.show(in: self.view, message: "Session close success", timeOut: 0.5)
+                    self.performSegue(withIdentifier: ConstantDefs.SegueNames.SIGN_OUT_TO_LAUNCHER, sender: self)
+                }
+                print("Session close success")
+        },
+              onFailure: {
+                self.runOnMainThread{
+                    ToastPresenter.shared.show(in: self.view, message: "Session close failed", timeOut: 2.0)
+                }
+                print("Session close failed")
+        }
+        )
+    }
+    
     @IBAction func signOutPressed(_ sender: RoundButton) {
         
         guard let currentLocation = location,
@@ -60,30 +87,9 @@ class SignOutViewController: LocationEnabledViewController {
         print(currentAddress)
         print(currentPostCode)
         
-        WebService.INSTANCE.closeSession(with:
-            SessionCloseRequest(
-                comments: comment,
-                lat: currentLocation.coordinate.latitude,
-                lan: currentLocation.coordinate.longitude,
-                address: currentAddress,
-                postCode: currentPostCode,
-                macAddress: MacUtils.INSTANCE.getDeviceMac()
-            ),onSuccess: {
-                self.runOnMainThread{
-                    LocalPersistenceService.INSTANCE.clearSignIn()
-                    ToastPresenter.shared.show(in: self.view, message: "Session close success", timeOut: 0.5)
-                    self.performSegue(withIdentifier: ConstantDefs.SegueNames.SIGN_OUT_TO_LAUNCHER, sender: self)
-                }
-                print("Session close success")
-            },
-            onFailure: {
-                self.runOnMainThread{
-                    ToastPresenter.shared.show(in: self.view, message: "Session close failed", timeOut: 2.0)
-                }
-                print("Session close failed")
-            }
-        )
-        
+        showAlertDialog(title: "Sign Out?", message: nil, positiveButtonTask: {
+            self.signOutTask(comment, currentLocation, currentAddress, currentPostCode)
+        })
     }
     
     private func dateToDiffString(date:Date) -> String{

@@ -35,15 +35,7 @@ class LoginViewController: UIViewController {
         },delay: 1.0)
     }
     
-    @IBAction func loginPressed(_ sender: UIButton) {
-        
-        let trimmedUserName = tfUserName.text!.trimmingCharacters(in: .whitespaces)
-        let trimmedPassword = tfPassword.text!.trimmingCharacters(in: .whitespaces)
-        
-        if trimmedUserName.isEmpty || trimmedPassword.isEmpty{
-            ToastPresenter.shared.show(in: self.view, message: self.EMPTY_CRED_MESSAGE,timeOut: 1.0)
-            return
-        }
+    private func loginTask(_ trimmedUserName: String, _ trimmedPassword: String) {
         disableLoginbuttons()
         WebService
             .INSTANCE
@@ -56,14 +48,28 @@ class LoginViewController: UIViewController {
                         LocalPersistenceService.INSTANCE.saveLogin(userName: trimmedUserName, passWord: trimmedPassword)
                         self.jumpToSignIn()
                     }
-                },
+            },
                 doOnFailure: {
                     self.runOnMainThread(0.0){
                         self.enableLoginbuttons()
                         ToastPresenter.shared.show(in: self.view, message: self.INVALID_CRED_MESSAGE,timeOut: 1.0)
                     }
-                }
-            )
+            }
+        )
+    }
+    
+    @IBAction func loginPressed(_ sender: UIButton) {
+        
+        let trimmedUserName = tfUserName.text!.trimmingCharacters(in: .whitespaces)
+        let trimmedPassword = tfPassword.text!.trimmingCharacters(in: .whitespaces)
+        
+        if trimmedUserName.isEmpty || trimmedPassword.isEmpty{
+            ToastPresenter.shared.show(in: self.view, message: self.EMPTY_CRED_MESSAGE,timeOut: 1.0)
+            return
+        }
+        showAlertDialog(title: "Procceed to login?", message: nil, positiveButtonTask: {
+            self.loginTask(trimmedUserName, trimmedPassword)
+        })
     }
     
     @IBAction func appLogoPressed(_ sender: UIButton) {
